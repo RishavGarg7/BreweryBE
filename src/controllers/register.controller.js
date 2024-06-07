@@ -28,7 +28,8 @@ const registerUser = async (req, res, next) => {
     const options = {
       expires: new Date(Date.now() + 86400000),
       httpOnly: true,
-      // secure: true
+      secure: true,
+      samesite: "none",
     };
 
     res.status(200).cookie("accessToken", token, options).json({
