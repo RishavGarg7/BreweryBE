@@ -2,8 +2,8 @@ import Review from "../models/Review.model.js";
 
 const postReview = async (req, res) => {
   try {
-    const { brewId, review } = req.body;
-    const user = req.user._id;
+    const { user,brewId, review } = req.body;
+    // const user = req.user._id;
     if (!brewId || !review) {
       throw new Error("All fields are required");
     }

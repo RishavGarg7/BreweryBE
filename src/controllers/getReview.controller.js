@@ -3,7 +3,7 @@ import Review from "../models/Review.model.js";
 const getReview = async (req, res) => {
   try {
     const brewId = req.params.brewId;
-    const response = await Review.find({ brewId: brewId });
+    const response = await Review.find({ brewId: brewId }).populate('user');
     res.status(200).json({
       success: true,
       data: response,
